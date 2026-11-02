@@ -1,0 +1,125 @@
+name: Bug report
+description: Report reproducible unexpected behavior in Lua Pro
+title: "[Bug]: "
+labels:
+  - bug
+  - needs-triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve Lua Pro. Search existing issues before submitting a new report.
+        Please redact confidential source code and project names, customer data, credentials, license keys and other sensitive information.
+
+  - type: input
+    id: plugin-version
+    attributes:
+      label: Lua Pro version
+      placeholder: "For example: 2026.1.0"
+    validations:
+      required: true
+
+  - type: input
+    id: ide
+    attributes:
+      label: IDE and build
+      description: Include the JetBrains IDE name and full build number.
+      placeholder: "For example: IntelliJ IDEA Ultimate 2025.2, IU-252.23892.409"
+    validations:
+      required: true
+
+  - type: input
+    id: operating-system
+    attributes:
+      label: Operating system
+      placeholder: "For example: macOS 15.6, Windows 11, or Ubuntu 24.04"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: runtime
+    attributes:
+      label: Selected runtime or dialect
+      options:
+        - Lua 5.1
+        - Lua 5.2
+        - Lua 5.3
+        - Lua 5.4
+        - LuaJIT
+        - Luau
+        - Other or unknown
+    validations:
+      required: true
+
+  - type: dropdown
+    id: language-server
+    attributes:
+      label: Language-server provider
+      options:
+        - LuaLS
+        - EmmyLuaLS
+        - luau-lsp
+        - Custom
+        - Disabled or not applicable
+        - Unknown
+    validations:
+      required: true
+
+  - type: textarea
+    id: tools
+    attributes:
+      label: Tool versions and project setup
+      description: Include interpreter, language-server and LSP4IJ versions. Mention StyLua, Luacheck, LuaRocks or lua-debug versions when relevant. For Remote Development, include client and backend OS/IDE versions. Omit confidential paths.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Problem
+      description: Describe what went wrong and how it affects your work.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open ...
+        2. Select ...
+        3. Observe ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: lua-example
+    attributes:
+      label: Minimal Lua or Luau example
+      description: Paste the smallest redacted example that reproduces the problem, if applicable. Specify .lua or .luau when it matters.
+      render: lua
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: Include redacted screenshots, stack traces or relevant IDE log excerpts when useful.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Submission checks
+      options:
+        - label: I searched existing issues for this problem.
+          required: true
+        - label: I removed confidential and personally identifiable information from this report.
+          required: true
+        - label: This is not a security vulnerability.
+          required: true

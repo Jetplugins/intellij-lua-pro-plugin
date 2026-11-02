@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Lua Pro issue tracker guide
+    url: https://github.com/Jetplugins/intellij-lua-pro-plugin#readme
+    about: Read the reporting guide and requirements for Lua Pro.
+  - name: Report a security vulnerability privately
+    url: https://github.com/Jetplugins/intellij-lua-pro-plugin/security/advisories/new
+    about: Do not disclose security vulnerabilities in public issues.
